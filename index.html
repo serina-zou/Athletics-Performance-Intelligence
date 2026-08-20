@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0d2430"/><g fill="none" stroke="#31D2C1" stroke-width="5" stroke-linecap="round"><path d="M34 32v36M46 26v48M58 32v36M70 40v20"/></g></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#31D2C1; --brand-press:#28bdad; --accent:#31D2C1;
+  --bg:#ffffff; --bg2:#ffffff; --card:#ffffff;
+  --acc-ink:#0f8578;
+  --fg:#13303c; --muted:#4c6572; --dim:#7d939c;
+  --line:#e0e8e8; --line2:#cfdcdb;
+  --brand-ink:#0f8578; --on-brand:#0d2430;
+  --shadow:0 12px 30px -16px rgba(17,40,54,.18);
+  --shadow-hover:0 22px 44px -18px rgba(17,40,54,.3);
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --bg:#0b1a25; --bg2:#0b1a25; --card:#16303f;
+  --acc-ink:#31D2C1;
+  --fg:#ffffff; --muted:rgba(255,255,255,.74); --dim:rgba(255,255,255,.52);
+  --line:rgba(255,255,255,.12); --line2:rgba(255,255,255,.22);
+  --brand-ink:#31D2C1; --on-brand:#0d2430;
+  --shadow:0 16px 38px -20px rgba(0,0,0,.55);
+  --shadow-hover:0 24px 52px -20px rgba(0,0,0,.65);
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background .4s ease,color .3s ease}
+a{color:inherit;text-decoration:none;transition:color .2s ease}
+a:hover{color:var(--brand-ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid #31D2C1;outline-offset:3px;border-radius:4px}
+button{font-family:inherit}
+::selection{background:var(--brand);color:#0d2430}
+body{text-wrap:pretty;overflow-wrap:break-word}
+h1,h2,h3,h4,h5,h6{text-wrap:balance;overflow-wrap:break-word}
+p,li,span,dd,dt,figcaption,a,div{text-wrap:pretty}
+.reveal{opacity:0;transform:translateY(34px);filter:blur(8px);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1),filter .85s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none;filter:none}
+.devices-row .device-img:nth-child(2){transform:scale(.82)}
+.devices-row .device-img:nth-child(3),.devices-row .device-img:nth-child(5){transform:scale(1.15)}
+.devices-row .device-img:nth-child(4){transform:scale(1.02)}
+.devices-row .device-img:nth-child(1):hover{transform:scale(1.28)}
+.devices-row .device-img:nth-child(2):hover{transform:scale(1.1)}
+.devices-row .device-img:nth-child(3):hover,.devices-row .device-img:nth-child(5):hover{transform:scale(1.45)}
+.devices-row .device-img:nth-child(4):hover{transform:scale(1.3)}
+.reveal-img{overflow:hidden}
+.reveal-img img{transform:scale(1.12);transition:transform 1.5s cubic-bezier(.22,.61,.36,1)}
+.reveal-img.in img{transform:scale(1)}
+h2.reveal{transform:translateY(40px) scale(.965);transform-origin:center bottom}
+@keyframes fadeSlide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes mcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.mc-float{animation:mcFloat 5s ease-in-out infinite;transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s ease;box-shadow:var(--shadow);will-change:transform}
+.mc-float:hover{animation-play-state:paused;transform:scale(1.03);box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
+@media(prefers-reduced-motion:reduce){.mc-float{animation:none}}
+@keyframes accOpen{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.cs-track::-webkit-scrollbar{display:none}
+.apc-scroll{scrollbar-width:thin;scrollbar-color:var(--brand) var(--line)}
+@media(max-width:640px){.kb-dup{display:none!important}}
+@media(max-width:860px){.mc-grid{grid-template-columns:1fr!important}}
+.apc-scroll::-webkit-scrollbar{width:7px}
+.apc-scroll::-webkit-scrollbar-thumb{background:var(--brand);border-radius:4px}
+.apc-scroll::-webkit-scrollbar-track{background:var(--line);border-radius:4px}
+@media(max-width:900px){.cs-track{grid-auto-columns:calc((100% - 1*clamp(20px,2.5vw,32px))/2)!important}.cs-nav{display:none!important}}
+@media(max-width:640px){.cs-track{grid-auto-flow:row!important;grid-auto-columns:auto!important;grid-template-columns:1fr 1fr!important;overflow-x:visible!important;overflow-y:visible!important;touch-action:auto!important;scroll-snap-type:none!important;gap:16px!important}.cs-nav{display:none!important}}
+@keyframes accItem{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hl-wipe{background-image:linear-gradient(var(--brand),var(--brand));background-repeat:no-repeat;background-position:0 0;background-size:0% 100%;transition:background-size 1s cubic-bezier(.22,.61,.36,1) .15s,color .6s ease .35s;border-radius:4px;padding:0 .06em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.reveal.in .hl-wipe{background-size:100% 100%;color:#0d2430}
+@media (prefers-reduced-motion:reduce){.reveal{transition:opacity .3s;transform:none;filter:none}.reveal-img img{transition:none;transform:none}}
+@media(max-width:820px){.ftr-grid{grid-template-columns:1fr 1fr!important}.ftr-brand{grid-column:1/-1!important}}
+@media(max-width:560px){.ftr-grid{grid-template-columns:1fr!important}}
+html,body{overflow-x:clip;max-width:100vw;width:100%;margin:0}
+.nav-toggle{display:none}
+@media(max-width:940px){
+  .nav-toggle{display:inline-flex}
+  .brand-name{font-size:13px!important;max-width:min(60vw,300px)}
+  .brand-logo{width:30px!important;height:30px!important}
+  .site-nav{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap!important;align-items:stretch;gap:2px!important;background:var(--bg);border-bottom:1px solid var(--line);padding:10px clamp(20px,4vw,32px) 18px;box-shadow:var(--shadow);max-height:80vh;overflow-y:auto}
+  .site-nav.open{display:flex!important}
+  .site-nav>a,.site-nav>div,.site-nav>div>a{width:100%}
+  .site-nav>a,.site-nav>div>a{padding:13px 2px!important;font-size:16px!important}
+  .site-nav>a[href="#pricing"]{display:flex;align-items:center;justify-content:center;text-align:center;padding:13px 16px!important}
+  .site-nav .svc-menu{position:static!important;padding-top:0!important}
+  .site-nav .svc-menu>div{box-shadow:none!important;border:none!important;background:transparent!important;padding:4px 0 8px 12px!important}
+  .site-nav .svc-menu>div>a{font-size:15px!important}
+}
+@media(max-width:940px){
+  .sticky-media,.sticky-col{position:static!important;top:auto!important}
+}
+@media(max-width:860px){
+  .scroll-progress{display:none!important}
+  .caipo-grid{grid-template-columns:1fr!important}
+  .devices-row{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:24px 12px!important;justify-items:center;align-items:center}
+  .device-img{max-width:100%!important;height:auto!important;width:clamp(56px,20vw,110px)!important}
+  .tier-grid{grid-template-columns:1fr!important;grid-template-rows:none!important}
+  .tier-card{grid-template-rows:none!important;grid-row:auto!important;display:flex!important;flex-direction:column}
+  .cap-card{flex:0 1 300px!important}
+}
+@media(max-width:480px){
+  section>div{padding-left:18px!important;padding-right:18px!important}
+  h2{font-size:clamp(1.7rem,7.5vw,2.2rem)!important;line-height:1.12!important}
+  .data-stream-grid{grid-template-columns:1fr!important}
+}
+.hw-detail{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,margin-top .4s ease}
+.hw-step:focus-within .hw-detail{max-height:240px;opacity:1;margin-top:10px}
+.hw-step{cursor:pointer}
+.hw-step:focus-within .hw-chev{transform:rotate(180deg)}
+</style>
+</helmet>
+
+<div class="scroll-progress" style="position:fixed;top:0;left:0;right:0;height:3px;z-index:1100;background:transparent">
+  <div ref="{{ progressRef }}" style="height:100%;width:0%;background:var(--brand)"></div>
+</div>
+
+<!-- ============ HEADER (fixed) ============ -->
+<header data-screen-label="Header" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)">
+  
+<div style="max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap">
+    <a href="#hero" onClick="{{ goTop }}" style="display:flex;align-items:center;gap:12px;min-width:0">
+      <img src="assets/logo.svg" alt="FloLabs logo" class="brand-logo" style="width:38px;height:38px;display:block;flex:none">
+      <span class="brand-name" style="font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Athletic Performance Intelligence</span>
+    </a>
+    <nav aria-label="Main navigation" class="site-nav {{ navClass }}" onClick="{{ onNavClick }}" style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-left:auto">
+      <a href="#api" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">What It Is</a>
+      <a href="#flobrain" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Technology</a>
+      <a href="#moodchanger" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Platform</a>
+      <a href="#how" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">How It Works</a>
+      <div style="position:relative" onMouseEnter="{{ openServices }}" onMouseLeave="{{ closeServices }}">
+        <a href="#tier-1" data-svc-toggle="" onClick="{{ toggleServices }}" style="font-size:14px;color:var(--muted);display:inline-flex;align-items:center;gap:5px" style-hover="color:var(--brand-ink)">Solutions
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+        <sc-if value="{{ servicesOpen }}" hint-placeholder-val="{{ false }}">
+          <div class="svc-menu" style="position:absolute;top:100%;left:-14px;padding-top:12px">
+            <div style="display:flex;flex-direction:column;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:8px;gap:2px">
+              <a href="#tier-1" style="font-size:14px;color:var(--muted);padding:9px 12px;border-radius:8px" style-hover="background:var(--bg2);color:var(--brand-ink)">No Wearable</a>
+              <a href="#tier-2" style="font-size:14px;color:var(--muted);padding:9px 12px;border-radius:8px" style-hover="background:var(--bg2);color:var(--brand-ink)">With Wearable</a>
+              <a href="#tier-3" style="font-size:14px;color:var(--muted);padding:9px 12px;border-radius:8px" style-hover="background:var(--bg2);color:var(--brand-ink)">System Design</a>
+              <a href="#tiers" style="font-size:14px;color:var(--muted);padding:9px 12px;border-radius:8px" style-hover="background:var(--bg2);color:var(--brand-ink)">Comparison</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <a href="#pricing" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Pricing</a>
+      <a href="#pricing" style="font-size: 16px; font-weight: 700; color: var(--on-brand); background: var(--brand); padding: 9px 16px; border-radius: 999px; width: 63px; height: 22px; text-align: center; align-self: center" style-hover="background:var(--brand-press);color:var(--on-brand)">Contact</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 10px; width: 39px; height: 21px">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="Toggle theme" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer" style-hover="border-color:var(--brand)">
+        <sc-if value="{{ isDark }}" hint-placeholder-val="{{ false }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"></path></svg>
+        </sc-if>
+        <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </sc-if>
+      </button>
+      <button type="button" class="nav-toggle" onClick="{{ toggleMobile }}" aria-label="Toggle menu" style="align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer" style-hover="border-color:var(--brand)">
+        <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path></svg>
+        </sc-if>
+        <sc-if value="{{ mobileClosed }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path></svg>
+        </sc-if>
+      </button>
+    </div>
+  </div></header>
+
+<main style="padding-top:63px">
+
+<!-- ============ HERO ============ -->
+<section id="hero" data-screen-label="Hero" style="position:relative;min-height:calc(100vh - 63px);display:flex;align-items:flex-end;overflow:hidden;background:#112836">
+  <img data-plx="" src="assets/hero.png" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(13,30,42,.82) 4%, rgba(13,30,42,.12) 55%, rgba(13,30,42,.18))"></div>
+  <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,120px) clamp(20px,4vw,32px) clamp(56px,7vw,88px)">
+    <h1 style="margin:0 0 10px;max-width:14ch;font-size:clamp(3.2rem,7.2vw,6.4rem);font-weight:700;line-height:.98;letter-spacing:-.035em;color:#ffffff">Athletic Performance Intelligence</h1>
+    <p style="margin:0 0 22px;font-size:clamp(1.5rem,2.8vw,2.4rem);font-weight:600;letter-spacing:-.01em;color:#31D2C1">Hardware Agnostic</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:26px">
+      <p style="margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.78);max-width:460px">Delivered to you by <span style="font-weight:600;color:#ffffff">MoodChanger</span>.<br>Powered by <span style="font-weight:600;color:#ffffff">FloBrain</span>.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="{{ consultHref }}" style="display:inline-flex;align-items:center;gap:8px;background:#31D2C1;color:#0d2430;font-weight:700;font-size:15px;padding:15px 28px;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease" style-hover="background:#28bdad;color:#0d2430;transform:translateY(-3px);box-shadow:0 18px 34px -14px rgba(0,0,0,.5)">Initial consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IS Athletic Performance Intelligence (image left, accordion right) ============ -->
+<section id="api" data-screen-label="What Is Athletic Performance Intelligence" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.04;letter-spacing:-.03em;color:var(--fg)">What Is Athletic Performance Intelligence?</h2>
+      <p class="reveal" style="margin:0 auto 12px;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">MoodChanger's core system architecture for sports performance optimization.<br>Designed to integrate multi-source athlete data and structure it into actionable performance intelligence.</p>
+      <p class="reveal" style="margin:0;font-size:15px;line-height:1.7;color:var(--dim)">Sports science frameworks / Behavioral intelligence models / AI-driven data processing (FloBrain)</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(32px,5vw,72px);align-items:start">
+      <div class="reveal reveal-img sticky-media" style="border-radius:24px;box-shadow:var(--shadow);position:sticky;top:96px">
+        <img src="assets/api.png" alt="Athletic Performance Intelligence system" style="width:100%;max-height:60vh;display:block;object-fit:cover;border-radius:24px">
+      </div>
+      <div>
+        <sc-for list="{{ apiGroups }}" as="g" hint-placeholder-count="3">
+          <div class="reveal" style="border-top:1px solid var(--line2)">
+            <button type="button" onClick="{{ g.toggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;background:transparent;border:0;padding:22px 0;cursor:pointer;font-family:inherit;text-align:left" style-hover="color:var(--brand-ink)">
+              <span style="font-size:clamp(1.1rem,1.5vw,1.3rem);font-weight:700;color:var(--fg)">{{ g.title }}</span>
+              <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:1px solid var(--line2);color:var(--brand-ink);transform:{{ g.chev }};transition:transform .3s ease">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:14px;height:14px"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </span>
+            </button>
+            <sc-if value="{{ g.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 0 24px;animation:accOpen .42s cubic-bezier(.22,.61,.36,1) both">
+                <sc-if value="{{ g.lead }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:0 0 10px;font-size:15px;font-weight:600;color:var(--brand-ink)">{{ g.lead }}</p>
+                </sc-if>
+                <sc-for list="{{ g.points }}" as="p" hint-placeholder-count="3">
+                  <p style="margin:0;padding:10px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted);animation:accItem .5s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc({{ $index }} * .07s + .08s)">{{ p }}</p>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid var(--line2)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOBRAIN (image background) ============ -->
+<section id="flobrain" data-screen-label="FloBrain" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-dashboard.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.8) brightness(.6);will-change:transform">
+  <div style="position:absolute;inset:0;background:linear-gradient(rgba(10,26,37,.72),rgba(10,26,37,.72))"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:#ffffff;text-shadow:0 2px 18px rgba(0,0,0,.45)">What Is FloBrain?</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.82)">A human intelligence engine designed to:</p>
+    </div>
+    <div class="reveal" style="max-width:760px;margin:0 auto 64px">
+      <p style="margin:0;padding:16px 0;border-top:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;color:#ffffff;text-align:center">Process multi-dimensional human data</p>
+      <p style="margin:0;padding:16px 0;border-top:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;color:#ffffff;text-align:center">Generate real-time, actionable insights</p>
+      <p style="margin:0;padding:16px 0;border-top:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;color:#ffffff;text-align:center">Acts as the core intelligence layer behind MoodChanger</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);margin-bottom:64px">
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 14px;font-size:19px;font-weight:700;color:#ffffff">What It Analyzes</h3>
+        <p style="margin:0 0 12px;font-size:15px;color:rgba(255,255,255,.7)">FloBrain integrates multiple data streams:</p>
+        <p style="margin:0 0 10px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85)">Cognitive signals such as focus, mood, and mental state.</p>
+        <p style="margin:0 0 10px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85)">Behavioral signals such as habits, routines, and consistency.</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85)">Physiological signals such as sleep, recovery, and stress.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 16px;font-size:19px;font-weight:700;color:#ffffff">How It Works</h3>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-weight:800;font-size:18px;color:#31D2C1;width:20px">1</span><div><p style="margin:0;font-size:16px;font-weight:600;color:#ffffff">Data collection</p><p style="margin:2px 0 0;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.7)">Raw data captured from athletes</p></div></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-weight:800;font-size:18px;color:#31D2C1;width:20px">2</span><div><p style="margin:0;font-size:16px;font-weight:600;color:#ffffff">Data structuring</p><p style="margin:2px 0 0;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.7)">FloBrain identifies meaningful patterns in performance data.</p></div></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-weight:800;font-size:18px;color:#31D2C1;width:20px">3</span><div><p style="margin:0;font-size:16px;font-weight:600;color:#ffffff">Intelligence generation</p><p style="margin:2px 0 0;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.7)">Those patterns provide context for performance decisions.</p></div></div>
+          <div style="display:flex;gap:14px;align-items:baseline"><span style="flex:none;font-weight:800;font-size:18px;color:#31D2C1;width:20px">4</span><div><p style="margin:0;font-size:16px;font-weight:600;color:#ffffff">Insight delivery</p><p style="margin:2px 0 0;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.7)">Coaches can apply that context to training and recovery decisions.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 14px;font-size:19px;font-weight:700;color:#ffffff">Built For Sport</h3>
+        <p style="margin:0 0 10px;font-size:16px;line-height:1.65;color:rgba(255,255,255,.85)">Traditional systems focus on isolated metrics, such as physical load. FloBrain connects:</p>
+        <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:rgba(255,255,255,.85)">Physiological + Mental + Environmental signaling combined into a unified data model.</p>
+        <p style="margin:0;font-size:clamp(1.1rem,1.7vw,1.35rem);font-weight:700;line-height:1.3;color:#31D2C1">= Integrated Performance Readiness Insights</p>
+      </div>
+    </div>
+
+    <div class="reveal data-stream-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,2.5vw,40px)">
+      <p style="flex:0 1 300px;margin:0;padding:26px 8px;border-top:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;line-height:1.5;color:#ffffff;text-align:center">Unified Athlete Profile Building</p>
+      <p style="flex:0 1 300px;margin:0;padding:26px 8px;border-top:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;line-height:1.5;color:#ffffff;text-align:center">Smarter and clearer coaching decisions</p>
+      <p style="flex:0 1 300px;margin:0;padding:26px 8px;border-top:1px solid rgba(255,255,255,.22);font-size:17px;font-weight:600;line-height:1.5;color:#ffffff;text-align:center">Supplementary Approach for Optimizing Sports Performance</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOODCHANGER ============ -->
+<section id="moodchanger" data-screen-label="MoodChanger" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div class="mc-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center">
+      <div>
+        <h2 class="reveal" style="margin:0 0 20px;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">MoodChanger</h2>
+        <p class="reveal" style="margin:0 0 36px;font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.6;color:var(--muted)">A human performance optimization platform. Focused on mental, physical, and behavioral intelligence integration. Designed for high-performance environments, especially sports.</p>
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px;margin-bottom:28px">
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:var(--fg)">Powered By FloBrain</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">FloBrain, our core AI intelligence engine. Acts as a decision-support system that processes human data into meaningful insights.</p>
+        </div>
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:var(--fg)">What We Do</h3>
+          <p style="margin:0 0 10px;font-size:16px;line-height:1.7;color:var(--muted)">Athletic Performance Intelligence organizes fragmented performance data and turns it into useful context for coaches and performance staff.</p>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Goal:</span> To improve decision-making, enhance performance consistency, and reduce inefficiencies in workflow.</p>
+        </div>
+      </div><img src="assets/moodchanger-photo.png" alt="Athlete wearing an Apple Watch" class="mc-float" style="width: 508px; max-height: 70vh; display: block; object-fit: cover; border-radius: 24px; height: 483px">
+      <div class="reveal reveal-img" style="border-radius:24px;box-shadow:var(--shadow)">
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Athletic Performance Intelligence SYSTEM MODELS ============ -->
+<section id="models" data-screen-label="Athletic Performance Intelligence System Models" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-tennis.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.72);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(15,35,46,.55)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(100px,13vw,170px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 clamp(56px,7vw,88px);text-align:center">
+      <h2 class="reveal" style="margin:0 0 26px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.04;letter-spacing:-.03em;color:#ffffff">System Models Driving Athletic Performance Intelligence Architecture</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.78)">Athletic Performance Intelligence is our proprietary system architecture designed to integrate sports science frameworks with wearable and FloBrain data.</p>
+    </div>
+
+    <div style="max-width:960px;margin:0 auto;min-height:540px;display:flex;flex-direction:column">
+      <sc-if value="{{ mSlide0 }}" hint-placeholder-val="{{ true }}">
+        <div style="animation:fadeSlide .5s ease both;flex:1">
+          <div style="display:grid;grid-template-columns:140px 1fr;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">
+            <div style="padding:0 0 14px">Model</div><div style="padding:0 0 14px">Purpose</div>
+          </div>
+          <sc-for list="{{ models }}" as="m" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:140px 1fr;border-top:1px solid rgba(255,255,255,.16)">
+              <div style="padding:17px 0;font-size:16px;font-weight:700;color:#31D2C1">{{ m.name }}</div>
+              <div style="padding:17px 0;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.78)">{{ m.purpose }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mSlide1 }}" hint-placeholder-val="{{ false }}">
+        <div style="animation:fadeSlide .5s ease both;flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
+          <div>
+            <h3 style="margin:0 0 16px;font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;color:#ffffff">How Frameworks Connect To Athletic Performance Intelligence</h3>
+            <p style="margin:0 0 12px;font-size:17px;line-height:1.75;color:rgba(255,255,255,.78)">These frameworks form the foundation of our Athletic Performance Intelligence, enabling structured decision-making based on integrated athlete data.</p>
+            <p style="margin:0;font-size:17px;line-height:1.75;color:rgba(255,255,255,.78)">These frameworks directly shape Athletic Performance Intelligence logic, data pipelines, and reporting systems to provide insights that mirror real-time context.</p>
+          </div>
+          <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden">
+            <img src="assets/frameworks-connection.jpg" alt="Clinician reviewing brain scan data on a tablet" style="width:100%;height:100%;display:block;object-fit:cover">
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ mSlide2 }}" hint-placeholder-val="{{ false }}">
+        <div style="animation:fadeSlide .5s ease both;flex:1;max-width:760px;margin:0 auto;width:100%">
+          <h3 style="margin:0 0 16px;font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;color:#31D2C1">Why MoodChanger's Athletic Performance Intelligence Is Different?</h3>
+          <p style="margin:0 0 22px;font-size:17px;line-height:1.75;color:rgba(255,255,255,.78)">Specialization in both: Athletic Performance Optimization, Sports Workflow Intelligence.</p>
+          <p style="margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Key Points</p>
+          <p style="margin:0;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)">Integration of mental, physical, and contextual data</p>
+          <p style="margin:0;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)">Works with or without wearables</p>
+          <p style="margin:0;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)">Automations of data collection, analysis, reporting</p>
+          <p style="margin:0;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)">Lower manual tracking workload and fragmented system</p>
+          <p style="margin:0;padding:15px 0 0;border-top:1px solid rgba(255,255,255,.16);font-size:16px;line-height:1.55;color:rgba(255,255,255,.85)">Enables real-time decision-making, personalized athlete management, scalable team insights</p>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;align-items:center;justify-content:center;gap:22px;margin-top:52px">
+        <button type="button" onClick="{{ mPrev }}" aria-label="Previous" style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#ffffff;cursor:pointer;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:#31D2C1;color:#31D2C1;transform:translateX(-2px)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:18px;height:18px"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <div style="display:flex;gap:9px">
+          <span style="width:9px;height:9px;border-radius:999px;background:{{ dot0 }};transition:background .3s ease"></span>
+          <span style="width:9px;height:9px;border-radius:999px;background:{{ dot1 }};transition:background .3s ease"></span>
+          <span style="width:9px;height:9px;border-radius:999px;background:{{ dot2 }};transition:background .3s ease"></span>
+        </div>
+        <button type="button" onClick="{{ mNext }}" aria-label="Next" style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#ffffff;cursor:pointer;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:#31D2C1;color:#31D2C1;transform:translateX(2px)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHALLENGE ============ -->
+<section id="challenge" data-screen-label="The Challenge" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">The Challenge</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">Modern sports organizations collect large volumes of data, but lack a unified system to translate it into clear, actionable insights. Performance insights remain fragmented across multiple tools and workflows.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3vw,40px);margin-bottom:48px">
+      <sc-for list="{{ challenges }}" as="c" hint-placeholder-count="4">
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:var(--fg)">{{ c.title }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:var(--muted)">{{ c.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;padding-top:40px;border-top:1px solid var(--line2)">
+      <h3 style="margin:0 0 12px;font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;color:var(--fg)">Where These Gaps Show Up</h3>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">These challenges affect athlete performance consistency, injury prevention, and coaching efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section id="solution" data-screen-label="The Solution" style="background:var(--bg2)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">The Solution</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">MoodChanger Athletic Performance Intelligence provides a centralized athletic performance intelligence system designed to integrate all human performance data, transform it into actionable insights, and support real-time decision-making.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3vw,40px);margin-bottom:48px">
+      <sc-for list="{{ solutions }}" as="s" hint-placeholder-count="4">
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;font-weight:700;color:var(--fg);min-height:2.5em">{{ s.title }}</h3>
+          <sc-for list="{{ s.points }}" as="p" hint-placeholder-count="3">
+            <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">{{ p }}</p>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div class="reveal">
+      
+      <p style="margin: 0 0 20px; font-size: 19px; font-weight: 700; color: #0F8578; text-align: left">Key Benefits</p><div class="kb-wrap" style="position:relative"><div class="cs-track kb-auto" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(20px,2.5vw,32px))/4);gap:clamp(20px,2.5vw,32px);overflow-x:auto;overflow-y:hidden;touch-action:pan-x;overscroll-behavior-x:contain;padding-bottom:4px">
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Real-time Performance Monitoring</h4></div>
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Holistic Athlete Management</h4></div>
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Reduced Injury Risk</h4></div>
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Improved Training Efficiency</h4></div>
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Scalable Across Teams And Organizations</h4></div>
+        <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Works With Or Without Connected Wearables</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Real-time Performance Monitoring</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Holistic Athlete Management</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Reduced Injury Risk</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Improved Training Efficiency</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Scalable Across Teams And Organizations</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Works With Or Without Connected Wearables</h4></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW Athletic Performance Intelligence WORKS (image background) ============ -->
+<section id="how" data-screen-label="How Athletic Performance Intelligence Works" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-volleyball.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.7);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(15,35,46,.55)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:#ffffff">How Our Athletic Performance Intelligence Works</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.78)">Athletic Performance Intelligence is designed to integrate with any wearables or function independently without a wearable technology, enabling scalable use across sports organizations regardless of their current technology adoption.</p>
+    </div>
+
+    <p class="reveal" style="margin:0 0 26px;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#31D2C1;text-align:center">Two Data Pathways</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);margin-bottom:56px">
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 16px;font-size:22px;font-weight:700;color:#ffffff">Without Wearables</h3>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Data sources</p>
+        <p style="margin:0 0 18px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Self-reported inputs on mood, stress, and readiness, plus training schedules, coaching inputs, and behavioral tracking</p>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Values</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Immediate implementation · No hardware dependency · Accessible for all organizations</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 16px;font-size:22px;font-weight:700;color:#ffffff">With ANY Wearables</h3>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Data sources</p>
+        <p style="margin:0 0 18px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Heart rate / HRV · Sleep quality · Recovery metrics · Movement tracking</p>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)">Values</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Higher data accuracy · Deeper physiological insights · Enhanced predictive capabilities</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);margin-bottom:56px">
+      <div class="reveal" style="border-top:1px solid rgba(255,255,255,.22);padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:19px;font-weight:700;color:#31D2C1">Unified Data Processing</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Regardless of source, all data flows into FloBrain, which standardizes inputs, processes them across multiple dimensions, and applies Athletic Performance Intelligence models: readiness, load, recovery, risk, performance, and context.</p>
+      </div>
+      <div class="reveal" style="border-top:1px solid rgba(255,255,255,.22);padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:19px;font-weight:700;color:#31D2C1">Insight Delivery</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">FloBrain processes results into athlete and coach dashboards and automated reports, delivered as real-time insights, actionable recommendations, and continuous performance tracking.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="max-width:760px;margin:0 auto;text-align:center;padding-top:40px;border-top:1px solid rgba(255,255,255,.16)">
+      <h3 style="margin:0 0 12px;font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;color:#ffffff">Start Without Hardware, Scale When Ready</h3>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Organizations can start without hardware and scale with wearable integrations as they see fit, ensuring flexibility, scalability, and cost-efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIER 1 ============ -->
+<section id="tier-1" data-screen-label="Tier 1" style="background:var(--bg2)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(64px,8vw,100px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--fg)">We Collect And Analyze Your Workflow And Training Regimen For&nbsp;You</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">For organizations without wearables, seeking to structured performance analysis based on MoodChanger's Athletic Performance Intelligence system. Focus on understanding your current workflow and structuring your existing data.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,64px);margin-bottom:56px">
+      <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:var(--fg)">What We Deliver</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">We collect, structure, and analyze: Training processes, Coaching workflows, Athlete management systems. Without any hardware and any technical setup.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:var(--fg)">What We Analyze</h3>
+        <div class="apc-scroll" style="display:flex;flex-direction:column;gap:0;max-height:150px;overflow-y:auto;padding-right:12px">
+          <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">Athlete schedules</p>
+          <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">Training programs</p>
+          <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">Coaching methods</p>
+          <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">Performance tracking methods</p>
+          <p style="margin:0;padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--muted)">Organizational workflow</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="border-top: 1px solid var(--line2); padding-top: 22px; grid-column: 1/-1; width: 1069px; height: 110px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:var(--brand-ink)">Wearable Integration Opportunity</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">Also introduce a list of compatible third-party wearables. Organizations can explore future integration options.</p>
+      </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,64px);align-items:stretch">
+      <div class="reveal" style="grid-column:1/-1">
+        
+        
+      </div>
+      
+    </div><p style="margin: 0 0 20px; font-size: 19px; font-weight: 700; color: #0F8578; text-align: left">Key Benefits</p><div class="kb-wrap" style="position:relative"><div class="cs-track kb-auto" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(20px,2.5vw,32px))/4);gap:clamp(20px,2.5vw,32px);overflow-x:auto;overflow-y:hidden;touch-action:pan-x;overscroll-behavior-x:contain;padding-bottom:4px">
+          
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">No Hardware Required</h4></div><div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Fast Implementation</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Clear Understanding Of Current Performance System</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Identification Of Inefficiencies And Gaps</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Foundation For Future Scaling</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">No Hardware Required</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Fast Implementation</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Clear Understanding Of Current Performance System</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Identification Of Inefficiencies And Gaps</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid var(--line2)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:var(--fg)">Foundation For Future Scaling</h4></div>
+        </div></div>
+  </div>
+</section>
+
+<!-- ============ TIER 1 DELIVERABLES (image background) ============ -->
+<section id="tier-1-deliverables" data-screen-label="Tier 1 Deliverables" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-track.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.75);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(15,35,46,.48)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <p class="reveal" style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#31D2C1">No Wearable</p>
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:#ffffff">Tailored Data Collection Approach</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.8)">Process is fully customized to each organization. Designed based on Sport type, Team structure, Coaching methodology.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);margin-bottom:clamp(40px,5vw,64px)">
+      <div class="reveal">
+        <h3 style="margin:0 0 14px;font-size:19px;font-weight:700;color:#ffffff">Data Collection Method</h3>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#31D2C1">What we collect</p>
+        <p style="margin:0;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.85)">Athlete-level information includes readiness and training participation</p>
+        <p style="margin:0;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.85)">Team-level information includes training load and coaching strategies</p>
+        <p style="margin:0 0 14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.85)">Organizational information includes workflow processes, performance tracking methods, and communication flow</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.75)">Structured through custom-designed surveys and check-ins. Ensures consistent data input and high-quality data for analysis.</p>
+      </div>
+      <div class="reveal">
+        <h3 style="margin:0 0 14px;font-size:19px;font-weight:700;color:#ffffff">Report Analysis</h3>
+        <p style="margin:0 0 12px;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.85)">Comprehensive reports are accessible through FloBrain App under MoodChanger Athletic Performance Intelligence athlete or coach dashboard.</p>
+        <p style="margin:0 0 12px;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.85)">Reports are customizable based on the athlete/coach's preferences.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.75)">Available as daily, weekly, monthly, and quarterly reports.</p>
+      </div>
+    </div>
+    <div class="reveal" style="border-top:1px solid rgba(255,255,255,.22);padding-top:clamp(32px,4vw,48px)">
+      <h3 style="margin:0 0 clamp(24px,3vw,32px);font-size:19px;font-weight:700;color:#31D2C1;text-align:center">Tier Requirements</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3vw,48px);max-width:900px;margin:0 auto">
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);text-align:center">Download the FloBrain App</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);text-align:center">Complete the appropriate MoodChanger Athletic Performance Intelligence athlete or coach profile, based on use</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS WITHOUT WEARABLES (sticky title left, timeline right) ============ -->
+<section id="how-without" data-screen-label="How It Works Without Wearables" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,80px);align-items:start">
+      <div class="sticky-col" style="position:sticky;top:22vh;align-self:start">
+        <h2 class="reveal" style="margin:0 0 26px;font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--fg)">How It Works <span class="hl-wipe">Without Wearables</span></h2>
+        <div class="reveal reveal-img" style="border-radius:20px;box-shadow:var(--shadow)">
+          <img src="assets/bg-yoga.jpg" alt="Athlete self-reflection and readiness" style="width:100%;max-height:44vh;display:block;object-fit:cover;border-radius:20px">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ stepsWithout }}" as="st" hint-placeholder-count="5">
+          <div class="reveal hw-step" tabindex="0" style="padding:26px 0;border-top:1px solid var(--line2)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+              <h3 style="margin:0;font-size:21px;font-weight:700;color:var(--fg)">{{ st.title }}</h3>
+              <span class="hw-chev" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;border:1px solid var(--line2);color:var(--brand-ink);transition:transform .3s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:13px;height:13px"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p class="hw-detail" style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">{{ st.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIER 2 (image background) ============ -->
+<section id="tier-2" data-screen-label="Tier 2" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-medical.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.72);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(15,35,46,.5)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <p class="reveal" style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#31D2C1">With Wearable</p>
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:#ffffff">We Analyze And Interpret Your Wearable Data For&nbsp;You</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.8)">For organizations that want deeper performance insights and use or plan to utilize wearable technologies. Focus on advanced data analysis and interpretation of multi-dimensional athlete data through MoodChanger Athletic Performance Intelligence system.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px)">
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:#ffffff">What We Deliver</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Analysis, interpretation, and insight generation. The system turns raw and structured data into performance intelligence.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:#ffffff">Wearable Data Integration</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Integrates data such as heart rate/HRV, sleep patterns, recovery, physical load. Combined with behavioral and training data.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:#ffffff">Advanced Insights Delivered</h3>
+        <p style="margin:0 0 8px;font-size:16px;line-height:1.65;color:rgba(255,255,255,.82)"><span style="font-weight:600;color:#ffffff">Athlete-level insights:</span> Readiness status, Recovery trends, Risk indicators</p>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:rgba(255,255,255,.82)"><span style="font-weight:600;color:#ffffff">Team-level insights:</span> Training effectiveness, Load management optimization</p>
+      </div>
+      <div class="reveal" style="grid-column:1/-1">
+        
+        <p style="margin:0 0 20px;font-size:19px;font-weight:700;color:#31D2C1;text-align:left">Key Benefits</p><div class="kb-wrap" style="position:relative"><div class="cs-track kb-auto" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(20px,2.5vw,32px))/4);gap:clamp(20px,2.5vw,32px);overflow-x:auto;overflow-y:hidden;touch-action:pan-x;overscroll-behavior-x:contain;padding-bottom:4px">
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Higher Data Accuracy</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Predictive Performance Insights</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Improved Injury Prevention</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Enhanced Training Optimization</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Real-time Monitoring Capabilities</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Higher Data Accuracy</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Predictive Performance Insights</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Improved Injury Prevention</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Enhanced Training Optimization</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Real-time Monitoring Capabilities</h4></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIER 2 DEVICE FLOW ============ -->
+<section id="device-flow" data-screen-label="Tier 2 Device Flow" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 48px;text-align:center">
+      <h2 class="reveal" style="margin:0;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">From Device To Decision</h2>
+    </div>
+    <div class="reveal devices-row" style="display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,48px);margin-bottom:72px;justify-content:space-between;align-items:center;width:100%">
+      <sc-for list="{{ wearables }}" as="w" hint-placeholder-count="5">
+        <img class="device-img" src="{{ w.img }}" alt="{{ w.name }}" style="width:clamp(90px,16%,150px);height:clamp(60px,8.5vw,104px);display:block;object-fit:contain;transition:transform .3s cubic-bezier(.22,.61,.36,1)">
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(24px,3vw,44px)">
+      <sc-for list="{{ deviceFlow }}" as="d" hint-placeholder-count="4">
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 10px;font-size:19px;font-weight:700;color:var(--fg)">{{ d.title }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:var(--muted)">{{ d.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIER 2 DASHBOARDS ============ -->
+<section id="dashboards" data-screen-label="Tier 2 Dashboards" style="background:var(--bg2)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 64px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">Personalized Reporting System</h2>
+      <p class="reveal" style="margin:0 auto 12px;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">Delivers fully customized reports. Tailored to organization needs, athlete roles, coaching objectives.</p>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:900px;font-size:15.5px;line-height:1.7;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Accessible via MoodChanger Athletic Performance Intelligence Dashboard:</span> All insights are integrated through FloBrain App under MoodChanger Athletic Performance Intelligence user dashboard. Real-time access for: Athlete, coaches, staff.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,72px)">
+      <div class="reveal">
+        <h3 style="margin:0 0 8px;font-size:22px;font-weight:700;color:var(--brand-ink)">Athlete View</h3>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight: 600; color: var(--fg);">Daily Check-In:&nbsp;</span>Mood tracking synced with FloBrain data.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight: 600; color: var(--fg);">Athletic Schedule:</span>&nbsp;Integrated with personal calendars, including Google Calendar and Apple Calendar.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight: 600; color: var(--fg);">Training Tracker:&nbsp;</span>Strength and conditioning, training sessions, and workout completion status.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight: 600; color: var(--fg);">Health Report:</span> Stress levels, sleep quality, recovery status, and injury tracking.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight: 600; color: var(--fg);">Overall Performance Report:</span> Daily, weekly, monthly, or custom periods, downloadable and shareable.</p>
+      </div>
+      <div class="reveal">
+        <h3 style="margin:0 0 8px;font-size:22px;font-weight:700;color:var(--brand-ink)">Coach View</h3>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Readiness Report:</span> Understand which athletes are prepared to perform.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Load Management:</span> Guidance on the training intensity to apply.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Recovery Analysis:</span> See which athletes are adapting well.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Risk Monitoring:</span> Flags athletes at risk of injury or underperformance.</p>
+        <p style="margin:0;padding:14px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);font-size:15.5px;line-height:1.6;color:var(--muted)"><span style="font-weight:600;color:var(--fg)">Performance Tracking:</span> Track whether athletes are improving over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS WITH WEARABLE (sticky title left, timeline right) ============ -->
+<section id="how-with" data-screen-label="How It Works With Wearable" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,80px);align-items:start">
+      <div class="sticky-col" style="position:sticky;top:22vh;align-self:start">
+        <h2 class="reveal" style="margin:0 0 26px;font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--fg)">How It Works <span class="hl-wipe">With Wearables</span></h2>
+        <div class="reveal reveal-img" style="border-radius:20px;box-shadow:var(--shadow)">
+          <img src="assets/bg-ski.jpg" alt="Athlete in action" style="width:100%;max-height:44vh;display:block;object-fit:cover;border-radius:20px">
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ stepsWith }}" as="st" hint-placeholder-count="5">
+          <div class="reveal hw-step" tabindex="0" style="padding:26px 0;border-top:1px solid var(--line2)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+              <h3 style="margin:0;font-size:21px;font-weight:700;color:var(--fg)">{{ st.title }}</h3>
+              <span class="hw-chev" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;border:1px solid var(--line2);color:var(--brand-ink);transition:transform .3s ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:13px;height:13px"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p class="hw-detail" style="margin:0;font-size:16px;line-height:1.7;color:var(--muted)">{{ st.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIER 3 (image background) ============ -->
+<section id="tier-3" data-screen-label="Tier 3" style="position:relative;background:#0f2532;overflow:hidden">
+  <img data-plx="" src="assets/bg-gym.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.72);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(15,35,46,.5)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <p class="reveal" style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#31D2C1">System Design</p>
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:#ffffff">We Build The System With You That Fits Your&nbsp;Needs</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:900px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.8)">For organizations that require fully customized solutions and want to integrate performance intelligence into their entire ecosystem. Focus on system design, full integration, long-term optimization.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(24px,4vw,48px); align-items: stretch; width: 1053px; height: 607px">
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;color:#ffffff">What We Deliver</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)">Co-develop a tailored performance intelligence system. Fully aligned with workflows, infrastructure, and performance philosophy.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 8px;font-size:19px;font-weight:700;color:#ffffff">What We Customize</h3>
+        <p style="margin:0;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85)">Data architecture</p>
+        <p style="margin:0;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85)">Athletic Performance Intelligence structure</p>
+        <p style="margin:0;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85)">Dashboard and reporting systems</p>
+        <p style="margin:0;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85)">Workflow automation</p>
+        <p style="margin:0;padding:11px 0 0;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85)">Integration with existing tools</p>
+      </div>
+      <div class="reveal" style="grid-column:1/-1">
+        
+        <p style="margin:0 0 20px;font-size:19px;font-weight:700;color:#31D2C1;text-align:left">Key Benefits</p><div class="kb-wrap" style="position:relative"><div class="cs-track kb-auto" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(20px,2.5vw,32px))/4);gap:clamp(20px,2.5vw,32px);overflow-x:auto;overflow-y:hidden;touch-action:pan-x;overscroll-behavior-x:contain;padding-bottom:4px">
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Fully Tailored Solution</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Seamless Integration With Existing Systems</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Scalable Across Teams And Departments</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Long-term Performance Optimization</h4></div>
+          <div class="reveal kb-item" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Strategic Partnership With MoodChanger</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Fully Tailored Solution</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Seamless Integration With Existing Systems</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Scalable Across Teams And Departments</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Long-term Performance Optimization</h4></div><div class="kb-item kb-dup" aria-hidden="true" style="scroll-snap-align:start;text-align:center;padding:26px 8px 0;border-top:1px solid rgba(255,255,255,.22)"><h4 style="margin:0;font-size:17px;font-weight:600;line-height:1.4;color:#ffffff">Strategic Partnership With MoodChanger</h4></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIERS 1-3 COMPARE ============ -->
+<section id="tiers" data-screen-label="Tiers 1-3 Comparison" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">Designed As A Progressive System</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">Each tier represents a different level of data maturity and performance intelligence.</p>
+    </div>
+    <div class="tier-grid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(7,auto);gap:0 clamp(24px,3vw,44px);margin-bottom:48px">
+      <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="3">
+        <div class="reveal tier-card" style="display:grid;grid-template-rows:subgrid;grid-row:span 7;border:1px solid var(--line2);border-radius:24px;padding:clamp(24px,3vw,34px)">
+          <div>
+            <p style="margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)">{{ t.kicker }}</p>
+            <h3 style="margin:0;font-size:22px;font-weight:700;line-height:1.25;color:var(--fg)">{{ t.title }}</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;padding-top:14px">
+            <sc-for list="{{ t.start }}" as="li" hint-placeholder-count="2">
+              <p style="margin:0;padding:10px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--muted)">{{ li }}</p>
+            </sc-for>
+          </div>
+          <p style="margin:0;padding:14px 0;font-size:clamp(1.9rem,2.6vw,2.4rem);font-weight:800;line-height:1;color:var(--brand)">+</p>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ t.plus }}" as="li" hint-placeholder-count="3">
+              <p style="margin:0;padding:10px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.55;font-weight:600;color:var(--fg)">{{ li }}</p>
+            </sc-for>
+          </div>
+          <p style="margin:0;padding:14px 0;font-size:clamp(1.9rem,2.6vw,2.4rem);font-weight:800;line-height:1;color:var(--brand)">=</p>
+          <p style="margin: 0 0 18px; font-size: 18px; font-weight: 800; line-height: 1.5; color: var(--brand-ink)">{{ t.arrow }}</p>
+          <div style="align-self:end"><span style="display:inline-block;border:1px solid var(--line2);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--fg)">{{ t.tag }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING / CTA ============ -->
+<section id="pricing" data-screen-label="Consultancy Pricing" style="position:relative;background:#112836;overflow:hidden">
+  <img data-plx="" src="assets/bg-soccer.jpg" alt="" style="position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;filter:saturate(.85) brightness(.72);will-change:transform">
+  <div style="position:absolute;inset:0;background:rgba(17,40,54,.55)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:#ffffff">Custom Pricing Model</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:rgba(255,255,255,.74)">Fully customized based on: Organization size, Level of service tier, Data complexity, Integration requirements.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3vw,44px);margin-bottom:56px">
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#31D2C1">Pricing Flexibility</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.74)">Every organization operates differently. Pricing is scoped around its workflows, performance tracking systems, and performance goals.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#31D2C1">Value-Based Investment</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.74)">Clients are investing in Performance optimization, Injury risk reduction workflow efficiency, Long-term performance growth.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#31D2C1">Scalable Engagement</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.74)">Organizations can start with the entry engagement and scale up as needs grow. Pricing grows with needs, complexity, value delivered.</p>
+      </div>
+      <div class="reveal" style="border-top:2px solid #31D2C1;padding-top:22px">
+        <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;color:#31D2C1">What's Included</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.74)">MoodChanger platform and FloBrain intelligence engine · Consultancy services · Data structuring · Analysis and reporting · System design.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;border-top:1px solid rgba(255,255,255,.16);padding-top:48px">
+      <h3 style="margin:0 0 12px;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:700;letter-spacing:-.02em;color:#ffffff">Begin With A Consultation</h3>
+      <p style="margin:0 auto 28px;font-size:16px;line-height:1.65;text-wrap:balance;color:rgba(255,255,255,.74);max-width:640px">Initial consultation · Needs assessment (e.g., Athlete and Team Profile building) · Customized implementation plan</p>
+      <a href="{{ consultHref }}" style="display:inline-flex;align-items:center;gap:10px;background:#31D2C1;color:#0d2430;font-weight:700;font-size:15px;padding:16px 32px;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease" style-hover="background:#28bdad;color:#0d2430;transform:translateY(-3px);box-shadow:0 18px 34px -14px rgba(0,0,0,.5)">Start with an initial consultation
+        
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAIPO ============ -->
+<section id="caipo" data-screen-label="CAIPO" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 56px;text-align:center">
+      <h2 class="reveal" style="margin:0 0 22px;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">CAIPO, Your AI Companion</h2>
+      <p class="reveal" style="text-wrap:balance;margin:0 auto;max-width:860px;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65;color:var(--muted)">Our AI-powered wearable companion. Designed to continuously monitor athlete performance and act as a real-time intelligence extension of FloBrain.</p>
+    </div>
+    <div class="caipo-grid" style="display:grid;grid-template-columns:minmax(280px,2fr) minmax(300px,3fr);gap:clamp(28px,5vw,72px);align-items:center;margin-bottom:72px">
+      <div class="reveal reveal-img" style="border-radius:24px;box-shadow:var(--shadow)">
+        <img src="assets/caipo.png" alt="CAIPO wearable companion" style="width:100%;max-height:56vh;display:block;object-fit:cover;border-radius:24px">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:36px">
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:var(--fg)">What CAIPO Does</h3>
+          <ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.8;color:var(--muted)">
+            <li>A data collection layer</li>
+            <li>A real-time feedback system</li>
+            <li>Directly connect to MoodChanger platform and FloBrain intelligence engine</li>
+          </ul>
+        </div>
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:var(--fg)">Hardware Flexibility</h3>
+          <p style="margin:0 0 8px;font-size:16px;line-height:1.7;color:var(--muted)">CAIPO is designed for flexible integration across multiple wearable formats:</p>
+          <ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.8;color:var(--muted)">
+            <li>Sports vests</li>
+            <li>Wristbands</li>
+            <li>Chest straps</li>
+            <li>Other wearable formats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3 class="reveal" style="margin:0 0 36px;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--fg);text-align:center">What CAIPO Delivers</h3>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(28px,4vw,64px) clamp(24px,3vw,48px);max-width:1120px;margin:0 auto">
+      <sc-for list="{{ caipoCaps }}" as="cc" hint-placeholder-count="5">
+        <div class="reveal cap-card" style="border-top:2px solid var(--brand);padding-top:22px;flex:0 1 320px">
+          <h4 style="margin:0 0 10px;font-size:17px;font-weight:700;color:var(--fg)">{{ cc.title }}</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:var(--muted)">{{ cc.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMING SOON ============ -->
+<section id="coming-soon" data-screen-label="Coming Soon" style="background:var(--bg2)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 48px;text-align:center">
+      <h2 class="reveal" style="margin:0;font-size:clamp(2.4rem,4.4vw,3.8rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:var(--fg)">MoodChanger Coming Soon</h2>
+    </div>
+    <div class="cs-wrap" style="position:relative;padding:0 clamp(0px,5vw,68px)">
+      <sc-if value="{{ csShowPrev }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ csPrev }}" aria-label="Previous products" class="cs-nav" style="position:absolute;left:0;top:calc(50% - 40px);transform:translateY(-50%);z-index:5;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid var(--line2);background:var(--bg);color:var(--fg);cursor:pointer;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease" style-hover="border-color:var(--brand);transform:translateY(-50%) scale(1.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+      </sc-if>
+      <sc-if value="{{ csShowNext }}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{ csNext }}" aria-label="Next products" class="cs-nav" style="position:absolute;right:0;top:calc(50% - 40px);transform:translateY(-50%);z-index:5;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid var(--line2);background:var(--bg);color:var(--fg);cursor:pointer;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease" style-hover="border-color:var(--brand);transform:translateY(-50%) scale(1.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+      </sc-if>
+      <div ref="{{ csTrackRef }}" class="cs-track" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3*clamp(20px,2.5vw,32px))/4);gap:clamp(20px,2.5vw,32px);overflow-x:auto;overflow-y:hidden;touch-action:pan-x;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 0 18px;scrollbar-width:none">
+        <sc-for list="{{ comingSoon }}" as="cs" hint-placeholder-count="4">
+          <a href="{{ cs.href }}" target="_blank" rel="noopener" class="reveal cs-card" style="scroll-snap-align:start;text-decoration:none;display:block">
+            <div class="reveal-img in" style="aspect-ratio:4/5;border-radius:20px;margin-bottom:16px;overflow:hidden">
+              <img src="{{ cs.img }}" alt="{{ cs.name }}" style="width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s cubic-bezier(.22,.61,.36,1)" style-hover="transform:scale(1.06)">
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <h3 style="margin:0;font-size:17px;font-weight:700;color:var(--fg)">{{ cs.name }}</h3>
+              <span style="flex:none;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--brand);color:#0d2430;border-radius:999px;padding:4px 10px">Soon</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY MOODCHANGER (theme-aware) ============ -->
+<section id="why" data-screen-label="Why MoodChanger" style="background:var(--bg)">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(20px,4vw,32px)">
+    <div style="margin:0 0 64px;text-align:center">
+      <h2 class="reveal" style="margin:0;font-size:clamp(2rem,3.9vw,3.4rem);font-weight:700;line-height:1.12;letter-spacing:-.02em;color:var(--fg)">Why MoodChanger Athletic Performance Intelligence</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3vw,44px);margin-bottom:80px">
+      <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="4">
+        <div class="reveal" style="border-top:2px solid var(--brand);padding-top:22px">
+          <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:var(--fg)">{{ w.title }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:var(--muted)">{{ w.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <p class="reveal" style="margin:0;text-align:center;font-size:clamp(1.6rem,3.4vw,2.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.2;color:var(--fg)">From Data to <span style="color:var(--brand-ink)">Decisions</span>, From Insights to <span style="color:var(--brand-ink)">Performance</span></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (content unchanged) ============ -->
+<footer data-screen-label="Footer" style="background:var(--bg);color:var(--fg)">
+  <div class="ftr-grid" style="max-width:1280px;margin:0 auto;padding:72px clamp(20px,4vw,32px) 56px;display:grid;grid-template-columns:2.1fr 1fr 1.4fr 1fr;gap:clamp(28px,3vw,44px)">
+    <div class="ftr-brand" style="min-width:260px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:nowrap">
+        <img src="assets/logo.svg" alt="FloLabs logo" style="width:40px;height:40px;display:block;flex:none">
+        <div style="min-width:0;padding-top:2px;line-height:1.3">
+          <span style="font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--fg)">Athletic Performance Intelligence</span> <span style="font-size:13px;color:var(--dim);white-space:nowrap">| by FloLabs Innovations Group</span>
+        </div>
+      </div>
+      <p style="text-wrap:balance;margin:0;max-width:440px;font-size:14px;line-height:1.65;color:var(--muted)">MoodChanger's hardware-agnostic athletic performance intelligence system. Integrates multi-source athlete data into actionable insights, powered by FloBrain.</p>
+      <div>
+        <p style="margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)">Newsletter</p>
+        <p style="margin:0 0 12px;font-size:14px;color:var(--muted)">Receive the newest FloLabs updates at:</p>
+        <form onSubmit="{{ newsletterSubmit }}" style="display:flex;max-width:380px;border:1px solid var(--line2);border-radius:10px;overflow:hidden">
+          <input type="email" placeholder="Enter your email..." aria-label="Email address" style="min-width:0;flex:1;background:transparent;border:0;padding:11px 14px;font-size:14px;color:var(--fg);outline:none;font-family:inherit">
+          <button type="submit" aria-label="Send newsletter signup" style="flex:none;display:flex;align-items:center;justify-content:center;background:#31D2C1;color:#112836;border:0;padding:0 14px;cursor:pointer" style-hover="background:#28bdad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+        </form>
+      </div>
+      <div>
+        <p style="margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)">Social Media</p>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:14px">
+          <a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on YouTube" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.3 7.6.3s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V8.4l6.2 3.4-6.2 3.3z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/flolabs-innovation/" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on LinkedIn" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.7H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.1v8H17.7v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7v7.3H7.8V8z"></path></svg>
+          </a>
+          <a href="https://www.facebook.com/people/Flo-Labs-RD/61572285432918/" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on Facebook" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/flolabsinnovations/" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on Instagram" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:21px;height:21px"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63c-.79.31-1.46.72-2.12 1.38C1.35 2.67.94 3.34.63 4.14.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.31.8.72 1.47 1.38 2.13.66.66 1.33 1.07 2.12 1.38.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56.8-.31 1.47-.72 2.13-1.38.66-.66 1.07-1.33 1.38-2.13.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.12A5.9 5.9 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"></path></svg>
+          </a>
+          <a href="https://www.tiktok.com/@flomadlabs" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on TikTok" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:19px;height:19px"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+          </a>
+          <a href="https://www.reddit.com/user/FloLabs_Innovations/" target="_blank" rel="noopener noreferrer" aria-label="FloLabs on Reddit" style="display:inline-flex;width:30px;height:30px;flex:none;align-items:center;justify-content:center;color:var(--fg)" style-hover="color:var(--brand-ink)">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M24 11.78a2.34 2.34 0 0 0-4-1.62 11.5 11.5 0 0 0-6.28-1.98l1.07-5.03 3.5.74a1.67 1.67 0 1 0 .17-.82l-3.9-.83a.42.42 0 0 0-.5.32l-1.19 5.6a11.55 11.55 0 0 0-6.37 1.98 2.34 2.34 0 1 0-2.58 3.83c-.02.19-.03.39-.03.58 0 2.96 3.45 5.37 7.7 5.37s7.7-2.4 7.7-5.37c0-.19-.01-.38-.03-.57A2.34 2.34 0 0 0 24 11.78zM6 13.44a1.67 1.67 0 1 1 3.34 0 1.67 1.67 0 0 1-3.34 0zm9.36 4.42c-1.14 1.15-3.32 1.23-3.96 1.23-.64 0-2.82-.08-3.96-1.23a.42.42 0 0 1 .6-.6c.72.72 2.26.98 3.36.98 1.1 0 2.64-.26 3.36-.98a.42.42 0 1 1 .6.6zm-.29-2.75a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav aria-label="Footer navigation" style="display:flex;flex-direction:column;gap:0">
+      <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)">Navigation</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="#hero" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Home</a></li>
+        <li><a href="#moodchanger" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Platform</a></li>
+        <li><a href="#flobrain" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Technology</a></li>
+        <li><a href="#api" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Overview</a></li>
+        <li><a href="#tier-1" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Services</a></li>
+        <li><a href="#caipo" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Wearable</a></li>
+        <li><a href="#pricing" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="FloLabs projects" style="display:flex;flex-direction:column;gap:0">
+      <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)">Projects</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="https://www.athleticperformanceintelligence.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Athletic Performance Intelligence</a></li>
+        <li><a href="https://www.caipo.ai/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">CAIPO</a></li>
+        <li><a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Connecting the Dots</a></li>
+        <li><a href="https://cosmosintelligence.org/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Cosmos Intelligence</a></li>
+        <li><a href="https://www.flomadtravel.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Flo Travel</a></li>
+        <li><a href="https://www.flobrain.ai/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">FloBrain</a></li>
+        <li><a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">FloLabs Innovations Group</a></li>
+        <li><a href="https://www.flolabs.international/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">FloLabs International</a></li>
+        <li><a href="https://www.flostudios.ai/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">FloStudios</a></li>
+        <li><a href="https://hephaestus.international/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Hephaestus International</a></li>
+        <li><a href="https://www.bootcampuniversity.org/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Innovation Bootcamp University</a></li>
+        <li><a href="https://www.moodchanger.ai/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">MoodChanger</a></li>
+        <li><a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Legal &amp; Ethics Ventures Institute</a></li>
+        <li><a href="https://www.robocollective.ai/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">RoboCollective</a></li>
+        <li><a href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Space Ventures Institute</a></li>
+        <li><a href="https://tarrl.org/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">TARRL</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Company" style="display:flex;flex-direction:column;gap:0">
+      <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)">Company</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Careers</a></li>
+        <li><a href="{{ contactHref }}" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Contact Us</a></li>
+        <li><a href="https://flolabsrd.notion.site/merch-background" target="_blank" rel="noopener noreferrer" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Merch</a></li>
+        <li><a href="{{ consultHref }}" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Initial consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div style="border-top:1px solid var(--line2)">
+    <p style="max-width:1280px;margin:0 auto;padding:20px clamp(20px,4vw,32px);text-align:center;font-size:14px;color:var(--dim)">Live Long and Prosper</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;defaultTheme&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;light&quot;, &quot;dark&quot;], &quot;default&quot;: &quot;light&quot;, &quot;tsType&quot;: &quot;'light' | 'dark'&quot;, &quot;section&quot;: &quot;Design variations&quot; },
+  &quot;animations&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Behavior&quot; }
+}">
+class Component extends DCLogic {
+  state = { theme: null, servicesOpen: false, mobileOpen: false, acc: 0, mSlide: 0, csAtStart: true, csAtEnd: false };
+  progressRef = React.createRef();
+  csTrackRef = React.createRef();
+
+  csScroll(dir) {
+    const el = this.csTrackRef.current;
+    if (!el) return;
+    const first = el.querySelector('.cs-card');
+    const gap = parseFloat(getComputedStyle(el).columnGap || '24') || 24;
+    const step = first ? (first.getBoundingClientRect().width + gap) : el.clientWidth / 4;
+    el.scrollBy({ left: dir * step * 4, behavior: 'smooth' });
+  }
+
+  csUpdateEdges = () => {
+    const el = this.csTrackRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    const atStart = el.scrollLeft <= 2;
+    const atEnd = el.scrollLeft >= maxScroll - 2;
+    if (atStart !== this.state.csAtStart || atEnd !== this.state.csAtEnd) this.setState({ csAtStart: atStart, csAtEnd: atEnd });
+  };
+
+  componentDidMount() {
+    let pref = null;
+    try { pref = localStorage.getItem('api-site-theme'); } catch (e) {}
+    const theme = (pref === 'light' || pref === 'dark') ? pref : (this.props.defaultTheme ?? 'light');
+    this.applyTheme(theme, false);
+
+    this.onScroll = () => {
+      const el = this.progressRef.current;
+      const h = document.documentElement;
+      if (el) {
+        const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+        el.style.width = (p * 100) + '%';
+      }
+      const vh = window.innerHeight;
+      document.querySelectorAll('[data-plx]').forEach((img) => {
+        const r = img.parentElement.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        const mid = r.top + r.height / 2 - vh / 2;
+        img.style.transform = 'translateY(' + (mid * -0.07).toFixed(1) + 'px)';
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+
+    document.querySelectorAll('.kb-auto').forEach((t) => {
+      let dir = 1, paused = false, idle = null;
+      const pause = () => { paused = true; if (idle) clearTimeout(idle); idle = setTimeout(() => { paused = false; }, 2200); };
+      t.addEventListener('pointerdown', pause);
+      t.addEventListener('wheel', pause, { passive: true });
+      t.addEventListener('touchstart', pause, { passive: true });
+      const tick = () => {
+        const half = t.scrollWidth / 2;
+        if (!paused && half > 2) {
+          t.scrollLeft += 0.5;
+          if (t.scrollLeft >= half) t.scrollLeft -= half;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+
+    const csEl = this.csTrackRef.current;
+    if (csEl) {
+      csEl.addEventListener('scroll', this.csUpdateEdges, { passive: true });
+      window.addEventListener('resize', this.csUpdateEdges);
+      requestAnimationFrame(this.csUpdateEdges);
+    }
+
+    const animate = this.props.animations ?? true;
+    if (animate && 'IntersectionObserver' in window) {
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            const el = en.target;
+            el.style.transitionDelay = ((el.__stagger || 0) * 90) + 'ms';
+            el.classList.add('in');
+            this.io.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      this.observeReveals();
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    }
+  }
+
+  observeReveals() {
+    if (!this.io) return;
+    document.querySelectorAll('.reveal:not(.in)').forEach((el) => {
+      if (el.__observed) return;
+      el.__observed = true;
+      const sibs = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.classList && c.classList.contains('reveal')) : [el];
+      el.__stagger = Math.max(0, sibs.indexOf(el));
+      this.io.observe(el);
+    });
+  }
+
+  componentDidUpdate() { this.observeReveals(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+
+  applyTheme(t, persist) {
+    document.documentElement.setAttribute('data-theme', t);
+    if (persist !== false) { try { localStorage.setItem('api-site-theme', t); } catch (e) {} }
+    this.setState({ theme: t });
+  }
+
+  kbScroll(e, dir) { const w = e.currentTarget.closest('.kb-wrap'); const t = w && w.querySelector('.cs-track'); if (!t) return; const card = t.querySelector('.kb-item'); const gap = parseFloat(getComputedStyle(t).columnGap || '24') || 24; const step = card ? (card.getBoundingClientRect().width + gap) : t.clientWidth / 4; t.scrollBy({ left: dir * step * 2, behavior: 'smooth' }); }
+  renderVals() {
+    const theme = this.state.theme ?? (this.props.defaultTheme ?? 'light');
+    const email = 'hello@flolabs.com';
+    const accGroups = [
+      { title: 'Sports Science And Performance Models', lead: null, points: ['Heart Rate Variability (HRV) measures autonomic nervous system balance and recovery status', 'Acute to Chronic Workload Ratio (ACWR) tracks training load progression and injury risk', 'Standard Sports Science Metrics includes volume, intensity, frequency, and performance outputs'] },
+      { title: 'Behavioral And Athlete Wellness Models', lead: null, points: ['Track mood, stress, readiness levels', 'Analyze behavioral patterns and consistency', 'Include wellness assessments for holistic performance monitoring'] },
+      { title: 'Service Standardization Models', lead: 'Enables', points: ['Repeatable processes across teams and organizations', 'Comparable performance insights and Personalized recommendations at scale'] }
+    ];
+    return {
+      progressRef: this.progressRef,
+      csTrackRef: this.csTrackRef,
+      csPrev: () => this.csScroll(-1),
+      kbPrev: (e) => this.kbScroll(e, -1),
+      kbNext: (e) => this.kbScroll(e, 1),
+      csNext: () => this.csScroll(1),
+      csShowPrev: !this.state.csAtStart,
+      csShowNext: !this.state.csAtEnd,
+      isDark: theme === 'dark',
+      isLight: theme !== 'dark',
+      toggleTheme: () => this.applyTheme(theme === 'dark' ? 'light' : 'dark'),
+      goTop: (e) => { if (e && e.preventDefault) e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      servicesOpen: this.state.servicesOpen,
+      techOpen: this.state.techOpen,
+      mobileOpen: this.state.mobileOpen,
+      mobileClosed: !this.state.mobileOpen,
+      navClass: this.state.mobileOpen ? 'open' : '',
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      onNavClick: (e) => { const t = e && e.target; const a = t && t.closest && t.closest('a[href^="#"]'); if (a && !a.hasAttribute('data-svc-toggle')) this.setState({ mobileOpen: false }); },
+      openServices: () => this.setState({ servicesOpen: true, techOpen: false }),
+      toggleServices: (e) => { if (window.matchMedia('(max-width:940px)').matches) { if (e && e.preventDefault) e.preventDefault(); if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ servicesOpen: !s.servicesOpen, techOpen: false })); } },
+      closeServices: () => this.setState({ servicesOpen: false }),
+      openTech: () => this.setState({ techOpen: true, servicesOpen: false }),
+      toggleTech: (e) => { if (window.matchMedia('(max-width:940px)').matches) { if (e && e.preventDefault) e.preventDefault(); if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ techOpen: !s.techOpen, servicesOpen: false })); } },
+      closeTech: () => this.setState({ techOpen: false }),
+      contactHref: 'mailto:' + email,
+      consultHref: 'mailto:' + email + '?subject=Initial%20consultation',
+      newsletterSubmit: (e) => {
+        e.preventDefault();
+        const input = e.target.querySelector('input');
+        if (input && input.value) {
+          window.location.href = 'mailto:' + email + '?subject=Newsletter%20signup&body=' + encodeURIComponent(input.value);
+        }
+      },
+      mSlide0: this.state.mSlide === 0,
+      mSlide1: this.state.mSlide === 1,
+      mSlide2: this.state.mSlide === 2,
+      dot0: this.state.mSlide === 0 ? '#31D2C1' : 'rgba(255,255,255,.3)',
+      dot1: this.state.mSlide === 1 ? '#31D2C1' : 'rgba(255,255,255,.3)',
+      dot2: this.state.mSlide === 2 ? '#31D2C1' : 'rgba(255,255,255,.3)',
+      mPrev: () => this.setState((s) => ({ mSlide: (s.mSlide + 2) % 3 })),
+      mNext: () => this.setState((s) => ({ mSlide: (s.mSlide + 1) % 3 })),
+      apiGroups: accGroups.map((g, i) => ({
+        ...g,
+        open: this.state.acc === i,
+        chev: this.state.acc === i ? 'rotate(180deg)' : 'rotate(0deg)',
+        toggle: () => this.setState((s) => ({ acc: s.acc === i ? -1 : i }))
+      })),
+      models: [
+        { name: 'Readiness', purpose: 'Determines if the athlete is physically and mentally prepared to perform' },
+        { name: 'Load', purpose: 'Measures the stress applied through training and matches' },
+        { name: 'Recovery', purpose: 'Evaluates how well the athlete is adapting to training stimuli' },
+        { name: 'Risk', purpose: 'Identifies injury risk and performance decline signals' },
+        { name: 'Performance', purpose: 'Tracks improvement trends and output progression' },
+        { name: 'Context', purpose: 'Explains why performance data appears the way it does' }
+      ],
+      challenges: [
+        { n: '1', title: 'Lack Of Comprehensive Athlete Overview', body: 'Athlete data is spread across training logs, readiness reports, coaching notes, external tools. No unified system to combine physical, mental, behavioral data.', outcome: "Incomplete understanding of athlete's overall readiness" },
+        { n: '2', title: 'Limited Integrated Decision Support', body: 'Performance decisions are often made using fragmented or incomplete data sources and observations. Limited access to real-time, integrated insights.', outcome: 'Challenges in maintaining consistent performance outcomes and optimal training balance' },
+        { n: '3', title: 'Inefficient Performance Workflow', body: 'Coaching staffs spend excessive time on manual data tracking, switching between platforms, compiling reports, because systems are not integrated and automated.', outcome: 'Reduced efficiency and Delayed decision-making' },
+        { n: '4', title: 'Lack Of Actionable Insights', body: 'Existing tools provide raw data and static dashboards. But, fail to deliver clear recommendations and contextual interpretation.', outcome: 'Data overload without clarity and Difficulty translating data into action' }
+      ],
+      solutions: [
+        { n: '1', title: 'Unified Athlete Intelligence', points: ['Aggregates physical, mental, and behavioral data patterns', 'Creates a clear athlete profile', 'Enables complete visibility of athlete condition and holistic performance analysis'] },
+        { n: '2', title: 'Data-Driven Decision Support', points: ['Utilizes Athletic Performance Intelligence models for readiness, load, recovery, risk, performance, and context', 'Provides real-time insights, predictive indicators, decision recommendations'] },
+        { n: '3', title: 'Automated Workflow Optimization', points: ['Automates data collection, data processing, report generation', 'Integrates multiple data streams into one system', 'Reduces manual workload and time spent on admin tasks'] },
+        { n: '4', title: 'Actionable Intelligence', points: ['Converts raw data into clear insights, contextual explanations, recommended actions', 'Delivers personalized athlete insights and team-level analytics'] }
+      ],
+      stepsWithout: [
+        { n: '1', title: 'Onboarding', body: "We collect and evaluate the organization's current setup, assist with athlete profile setup, and define performance goals." },
+        { n: '2', title: 'Workflow Integration', body: 'Existing training workflows, schedules, and coaching processes are structured and integrated into the platform.' },
+        { n: '3', title: 'Data Collection', body: 'Athlete-reported data, training inputs, and behavioral indicators are consistently collected through structured forms and system inputs.' },
+        { n: '4', title: 'Athletic Performance Intelligence Analysis', body: 'The Athletic Performance Intelligence system processes structured workflow and behavioral data to identify performance patterns, readiness levels, and potential risks.' },
+        { n: '5', title: 'Coaching Insights', body: 'Actionable dashboards and automated insights are delivered to coaches and performance staff in real-time to support decision-making.' }
+      ],
+      stepsWith: [
+        { n: '1', title: 'Onboarding', body: "We collect and evaluate the organization's current setup, assist with athlete profile setup, and define performance goals." },
+        { n: '2', title: 'Device Integration', body: 'Existing wearable devices are connected to the platform, and data pipelines are configured based on sport and performance requirements.' },
+        { n: '3', title: 'Data Collection', body: 'Physiological, behavioral, and performance data are continuously collected and streamed into the platform during training and competition.' },
+        { n: '4', title: 'Athletic Performance Intelligence Analysis', body: 'The Athletic Performance Intelligence system processes integrated data to identify performance patterns, fatigue indicators, and readiness signals.' },
+        { n: '5', title: 'Coaching Insights', body: 'Actionable dashboards and automated insights are delivered to coaches and performance staff in real-time to support decision-making.' }
+      ],
+      wearables: [
+        { name: 'Garmin', img: 'assets/wearables/garmin.png' },
+        { name: 'Apple Watch', img: 'assets/wearables/apple.png' },
+        { name: 'WHOOP', img: 'assets/wearables/whoop.png' },
+        { name: 'Catapult', img: 'assets/wearables/catapult.png' },
+        { name: 'Polar', img: 'assets/wearables/polar.png' }
+      ],
+      deviceFlow: [
+        { n: '1', title: 'Device Syncs', body: 'Connects with widely used wearable ecosystems, such as examples.' },
+        { n: '2', title: 'Data Normalized', body: 'Athlete data from different devices is standardized into a unified performance dataset.' },
+        { n: '3', title: 'Platform Analyzed', body: 'AI models process physiological and biomechanical signals to identify workload, fatigue, and readiness patterns.' },
+        { n: '4', title: 'Interpreted Insights Delivered', body: 'Clear dashboards and alerts support decisions on training load, recovery timing, and player availability.' }
+      ],
+      tiers: [
+        { kicker: 'No Wearable', title: 'Sport Performance Optimization', start: ['No wearable data', 'Lack a structured performance system'], plus: ['Structured workflows', 'Organized performance tracking', 'Foundational decision-making framework'], arrow: 'Enhancing existing workflows with structured performance intelligence', tag: 'Structure to Foundation' },
+        { kicker: 'With Wearable', title: 'Wearable Data Performance', start: ['Wearable data available', 'Need deeper interpretation'], plus: ['Data integration', 'Advanced analysis', 'Actionable insights'], arrow: 'Turn FloBrain and wearable data into intelligence decision system', tag: 'Insight to Intelligence' },
+        { kicker: 'System Design', title: 'Sport Performance System Design Consulting', start: ['Require full system integration', 'Want long-term performance optimization'], plus: ['Fully customized system', 'Athletic Performance Intelligence integration into existing infrastructure', 'End-to-end performance intelligence ecosystem'], arrow: 'Transition from tools to a fully integrated system', tag: 'System to Transformation' }
+      ],
+      caipoCaps: [
+        { n: '1', title: 'Sport-Specific Sensors', body: 'Metrics tailored for team and individual sports, such as workload, movement patterns, and fatigue indicators, not repurposed consumer health tracking.' },
+        { n: '2', title: 'Native Platform Integration', body: 'Zero-friction data sync directly into the Performance Optimization dashboard, eliminating the need for third-party data bridges.' },
+        { n: '3', title: 'Extended Battery Life', body: 'Full training day and competition coverage without recharging interruptions.' },
+        { n: '4', title: 'Real-Time Alerts', body: 'Instant flagging of physiological thresholds to coaching staff during live sessions or matches.' },
+        { n: '5', title: 'Lightweight And Durable Build', body: 'Engineered for contact sports, all-weather conditions, and intensive training loads.' }
+      ],
+      comingSoon: [
+        { name: 'Smart Glasses', img: 'assets/coming-soon-smart-glasses.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-glasses' },
+        { name: 'EEG Hardware', img: 'assets/cs-eeg-hardware.jpg', href: 'https://moodchanger.ai/Wearables.html#eeg-hardware' },
+        { name: 'Smart Ring', img: 'assets/coming-soon-smart-ring.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-ring' },
+        { name: 'Brain Monitoring', img: 'assets/cs-brain-monitor.jpg', href: 'https://moodchanger.ai/Wearables.html#brain-monitor' },
+        { name: 'Smart Foot Pods', img: 'assets/coming-soon-smart-foot-pods.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-foot-pods' },
+        { name: 'Smart Insoles', img: 'assets/cs-smart-insoles.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-insoles' },
+        { name: 'Smart Watch', img: 'assets/coming-soon-smart-watch.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-watch' },
+        { name: 'Exoskeleton', img: 'assets/cs-exoskeleton.jpg', href: 'https://moodchanger.ai/Wearables.html#exoskeleton' },
+        { name: 'Smart Gloves', img: 'assets/cs-smart-gloves.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-gloves' },
+        { name: 'Smart Shirts', img: 'assets/cs-smart-shirt.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-shirt' },
+        { name: 'Smart Suit', img: 'assets/cs-smart-suit.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-suit' },
+        { name: 'Smart Posture Trainer', img: 'assets/cs-smart-posture-trainer.jpg', href: 'https://moodchanger.ai/Wearables.html#smart-posture-trainer' }
+      ],
+      whyItems: [
+        { n: '1', title: 'Sport-first Platform', body: 'Unlike other health platforms: We are built specifically for athletic performance environments. Every feature is grounded in sports science and aligned with real training demands.' },
+        { n: '2', title: 'Device-Agnostic Ecosystem', body: 'Works with or without wearables. No need to change existing hardware and disrupt workflows.' },
+        { n: '3', title: 'Consultancy-Backed Insights', body: 'Provide interpretation and guidance. Ensures every insight leads to action and coaches can actually use the data.' },
+        { n: '4', title: 'Scalable For Organizations', body: 'Works for small teams, elite academies, professional organizations. Scales with complexity, data volume, organizational growth.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
